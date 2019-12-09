@@ -5,9 +5,9 @@
 <div class="container text-center">
     <h2 class="mb-3">Bestseller</h2>
     <div class="row mb-5 d-flex justify-content-between">
-        @foreach($products as $product)
+        @foreach($product as $product)
         <div class="col-md-3">
-            <a href="product.html" class="d-block border rounded mb-4 p-0 shadow-sm text-decoration-none">
+            <a href="products/{{$product->id}}" class="d-block border rounded mb-4 p-0 shadow-sm text-decoration-none">
                 <img class="img-fluid mb-3" src="https://images.unsplash.com/photo-1510018572596-e40e2619b412?fit=crop&w=500&h=350&q=80" />
                 <h4 class="text-muted mb-1">{{$product->name}}</h4>
                 <div class="mb-3">
