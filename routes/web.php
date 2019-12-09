@@ -12,13 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index', ['products' => App\Product::take(4)->get()]);
 });
 
 Route::get('/fische', function () {
     $name = request('name');
     return view('fische', ['name' => $name]);
 });
+
+
+Route::get(
+    '/products/{product}',
+    'ProductController@show'
+);
+
 
 // Route::get('/blog/{id}', function ($id) {
 //     $routeVariants = ['1' => 'foo', '2' => 'bar', '3' => 'baz'];
